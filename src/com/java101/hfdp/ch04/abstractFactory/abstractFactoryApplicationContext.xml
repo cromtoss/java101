@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:context="http://www.springframework.org/schema/context"
+     xsi:schemaLocation="http://www.springframework.org/schema/beans
+         http://www.springframework.org/schema/beans/spring-beans.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan base-package="com.java101.hfdp.ch04.abstractFactory"/>
+
+	<bean id="azathoth"
+		  class="com.java101.hfdp.ch04.elders.Azathoth"
+		  scope="singleton">
+		<constructor-arg index="0" value="Azathoth"/>
+		<constructor-arg index="1" value="The Blind Idiot God"/>
+		<constructor-arg index="2" value="H. P. Lovecraft"/>
+		<constructor-arg index="3" value="Encircled by his flopping horde of mindless and amorphous dancers, and lulled by the thin monotonous piping of a demonic flute held in nameless paws."/>
+	</bean>
+
+	<bean id="cthulhu"
+		  class="com.java101.hfdp.ch04.elders.Cthulhu"
+		  scope="singleton">
+		<constructor-arg index="0" value="Cthulhu"/>
+		<constructor-arg index="1" value="The Caller"/>
+		<constructor-arg index="2" value="H. P. Lovecraft"/>
+		<constructor-arg index="3" value="A mix between a giant human, an octopus, and a dragon, and is depicted as being hundreds of meters tall, with human-looking arms and legs and a pair of rudimentary wings on its back."/>
+	</bean>
+
+	<bean id="hastur"
+		  class="com.java101.hfdp.ch04.elders.Hastur"
+		  scope="singleton">
+		<constructor-arg index="0" value="Hastur"/>
+		<constructor-arg index="1" value="The King in Yellow"/>
+		<constructor-arg index="2" value="Ambrose Bierce"/>
+		<constructor-arg index="3" value="Its true form is unknown, but usually manifests either as a polypous, ravenous floating mass endowed with tentacles, drills and suckers or, more frequently, as the King in Yellow, a humanoid being wearing tattered, yellow clothes and a mask hiding the face. It is said to be Cthulhu's (half-)brother."/>
+	</bean>
+
+	<bean id="ithaqua"
+		  class="com.java101.hfdp.ch04.elders.Ithaqua"
+		  scope="singleton">
+		<constructor-arg index="0" value="Ithaqua"/>
+		<constructor-arg index="1" value="The Wind Walker"/>
+		<constructor-arg index="2" value="Algernon Blackwood"/>
+		<constructor-arg index="3" value="A gigantic, corpse-like human with webbed feet and glowing red eyes."/>
+	</bean>
+
+	<bean id="tsathoggua"
+		  class="com.java101.hfdp.ch04.elders.Tsathoggua"
+		  scope="singleton">
+		<constructor-arg index="0" value="Tsathoggua"/>
+		<constructor-arg index="1" value="The Sleeper of N'kai"/>
+		<constructor-arg index="2" value="Clark Ashton Smith"/>
+		<constructor-arg index="3" value="Appears as a huge, furry, almost humanoid toad, or a bat-like sloth."/>
+	</bean>
+
+	<bean id="yig"
+		  class="com.java101.hfdp.ch04.elders.Yig"
+		  scope="singleton">
+		<constructor-arg index="0" value="Yig"/>
+		<constructor-arg index="1" value="Father of Serpents"/>
+		<constructor-arg index="2" value="Zealia Bishop"/>
+		<constructor-arg index="3" value="A giant snake with human arms covered in scales. Son of the Mappo's Dragon, children of his are Ayi'ig and Voltiyig, whereas Rokon is regarded as the brother of Yig."/>
+	</bean>
+
+</beans>

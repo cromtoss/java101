@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="waitress"
+		  class="com.java101.hfdp.ch09.Waitress">
+		<constructor-arg ref="masterMenu"/>
+	</bean>
+
+	<bean id="anotherWaitress"
+		  class="com.java101.hfdp.ch09.Waitress">
+		<constructor-arg>
+			<list>
+				<ref bean="breakfastMenu"/>
+				<ref bean="dinerMenu"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="masterMenu"
+		  class="com.java101.hfdp.ch09.menu.MenuNode">
+		<constructor-arg index="0" value="All Menus"/>
+		<constructor-arg index="1" value=""/>
+		<constructor-arg index="2">
+			<list>
+				<ref bean="breakfastMenu"/>
+				<ref bean="dinerMenu"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="dinerMenu"
+		  class="com.java101.hfdp.ch09.menu.MenuNode">
+		<constructor-arg index="0" value="Diner Menu"/>
+		<constructor-arg index="1" value="Big Mike's Diner"/>
+		<constructor-arg index="2">
+			<list>
+				<ref bean="burger"/>
+				<ref bean="fries"/>
+				<ref bean="dessertMenu"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="burger"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Hamburger"/>
+		<constructor-arg index="1" value="A yummy hamburger."/>
+		<constructor-arg index="2" value="false"/>
+		<constructor-arg index="3" value="6.49"/>
+	</bean>
+
+	<bean id="fries"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Fries"/>
+		<constructor-arg index="1" value="Golden tasty fries."/>
+		<constructor-arg index="2" value="true"/>
+		<constructor-arg index="3" value="1.49"/>
+	</bean>
+
+	<bean id="dessertMenu"
+		  class="com.java101.hfdp.ch09.menu.MenuNode">
+		<constructor-arg index="0" value="Dessert Menu"/>
+		<constructor-arg index="1" value="Diane's Desserts"/>
+		<constructor-arg index="2">
+			<list>
+				<ref bean="pie"/>
+				<ref bean="iceCream"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="pie"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Apple Pie"/>
+		<constructor-arg index="1" value="A slice of pie."/>
+		<constructor-arg index="2" value="true"/>
+		<constructor-arg index="3" value="3.49"/>
+	</bean>
+
+	<bean id="iceCream"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Ice Cream"/>
+		<constructor-arg index="1" value="A scoop of vanilla."/>
+		<constructor-arg index="2" value="true"/>
+		<constructor-arg index="3" value="1.49"/>
+	</bean>
+
+	<bean id="breakfastMenu"
+		  class="com.java101.hfdp.ch09.menu.MenuNode">
+		<constructor-arg index="0" value="Breakfast Menu"/>
+		<constructor-arg index="1" value="Al's Breakfast"/>
+		<constructor-arg index="2">
+			<list>
+				<ref bean="omelet"/>
+				<ref bean="bacon"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="omelet"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Mushroom Omelet"/>
+		<constructor-arg index="1" value="A fancy omelet."/>
+		<constructor-arg index="2" value="true"/>
+		<constructor-arg index="3" value="4.29"/>
+	</bean>
+
+	<bean id="bacon"
+		  class="com.java101.hfdp.ch09.menu.MenuItem">
+		<constructor-arg index="0" value="Bacon"/>
+		<constructor-arg index="1" value="Bacon from the farmer's market."/>
+		<constructor-arg index="2" value="false"/>
+		<constructor-arg index="3" value="1.49"/>
+	</bean>
+
+</beans>
